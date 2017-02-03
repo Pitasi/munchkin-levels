@@ -1,0 +1,21 @@
+<template name="player">
+  <li>
+    <button class="modifier delete">&times;</button>
+    <span class="text name">{{name}}</span> <br />
+    <span class="text info"><strong>Level: {{level}}</strong></span> <br />
+    <span class="text info"><strong>Strength: {{strength}}</strong></span>
+
+    <hr>
+
+    <div class="modifier-wrapper">
+      <p>Level</p>
+      <button class="modifier down level">&darr;</button>
+      <button class="modifier up level">&uarr;</button>
+    </div>
+    <div class="modifier-wrapper">
+      <p>Strength</p>
+      <button class="modifier down strength">&darr;</button>
+      <button class="modifier up strength">&uarr;</button>
+    </div>
+  </li>
+</template>

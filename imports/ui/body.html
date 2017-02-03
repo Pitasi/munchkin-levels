@@ -1,0 +1,16 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Munchkin Players</h1>
+      <form class="new-player">
+        <input type="text" name="text" placeholder="Type to add new players" />
+      </form>
+    </header>
+
+    <ul>
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
