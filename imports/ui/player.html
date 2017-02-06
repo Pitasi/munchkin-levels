@@ -1,21 +1,32 @@
 <template name="player">
-  <li>
-    <button class="modifier delete">&times;</button>
-    <span class="text name">{{name}}</span> <br />
-    <span class="text info"><strong>Level: {{level}}</strong></span> <br />
-    <span class="text info"><strong>Strength: {{strength}}</strong></span>
+  <div class="card grey lighten-4">
+    <div class="card-content">
+      <a style="position: absolute;top: 10px; right: 10px;"
+         class="grey darken-1 btn-floating waves-effect waves-light delete">
+        <i class="material-icons">delete</i>
+      </a>
 
-    <hr>
+      <span class="card-title">{{name}}</span>
+      <p class="teal-text text-darken-4">Level: {{level}}</p>
+      <p class="red-text text-darken-3">Strength: {{strength}}</p>
+    </div>
+    <div class="card-action">
+      <a class="teal darken-4 waves-effect waves-light btn-floating up level">
+        <i class="large material-icons">add</i>
+      </a>
+      <a class="teal darken-4 waves-effect waves-light btn-floating down level {{#if lte1 level}}disabled{{/if}}">
+        <i class="large material-icons">remove</i>
+      </a>
 
-    <div class="modifier-wrapper">
-      <p>Level</p>
-      <button class="modifier down level">&darr;</button>
-      <button class="modifier up level">&uarr;</button>
+      <div style="width: 5%;display: inline-block;"></div>
+
+      <a class="red darken-3 waves-effect waves-light btn-floating up strength">
+        <i class="large material-icons">add</i>
+      </a>
+      <a class="red darken-3 waves-effect waves-light btn-floating down strength {{#if lte1 strength}}disabled{{/if}}">
+        <i class="large material-icons">remove</i>
+      </a>
     </div>
-    <div class="modifier-wrapper">
-      <p>Strength</p>
-      <button class="modifier down strength">&darr;</button>
-      <button class="modifier up strength">&uarr;</button>
-    </div>
-  </li>
+  </div>
+
 </template>

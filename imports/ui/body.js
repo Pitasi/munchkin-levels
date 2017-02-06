@@ -12,13 +12,8 @@ Template.body.onCreated(function bodyOnCreated() {
 
 Template.body.helpers({
   players() {
-    return Players.find({}, { sort: { createdAt: -1 } });
-  },
-
-  incompleteCount() {
-    return Players.find({ checked: { $ne: true } }).count();
-  },
-
+    return Players.find({}, { sort: { name: 1 } });
+  }
 });
 
 Template.body.events({
@@ -28,8 +23,8 @@ Template.body.events({
 
     // Get value from form element
     const target = event.target;
-    const name = target.text.value;
-
+    var t = target.text.value;
+    const name = t.charAt(0).toUpperCase() + t.slice(1).toLowerCase()
     // Insert a task into the collection
     Players.insert({
       name,
